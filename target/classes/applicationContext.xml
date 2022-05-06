@@ -2,9 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="musicBean"
+          class="org.example.JazzMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="org.example.MusicPlayer">
+       <property name="music" ref="musicBean"/>
 
-    <bean id="testBean"
-          class="org.example.TestBean">
-        <constructor-arg value="Neil"/>
-        </bean>
+        <property name="name" value="Some name"/>
+        <property name="volume" value="50"/>
+    </bean>
 </beans>
